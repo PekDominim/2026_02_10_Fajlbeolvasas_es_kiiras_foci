@@ -13,6 +13,22 @@ Olvasd be a labdarugok.txt adatait, majd oldd meg az alábbi feladatokat!
 
 A megoldott feladatokat a kiirt_adatok nevű mappában hozd létre statisztika.txt néven!
 """
+jatekosok = []
+
+with open("beolvasando_adatok\labdarugok.txt", "r", encoding="utf-8") as f:
+    fejlec = f.readline()
+    for sor in f:
+        adatok=sor.strip().split(";")
+        jatekosok.append(adatok)
+        jatekosok.append({
+            "nev": adatok[0],
+            "csapat": adatok[1],
+            "golt": int(adatok[2]),
+            "merkozes": int(adatok[3])
+        })
+
+
+        print(adatok)
 
 
 print("A beolvasott fájlban összesen ____ játékos szerepel.")
